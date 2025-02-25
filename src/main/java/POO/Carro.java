@@ -50,8 +50,8 @@ public class Carro {
         else if (escolha.equals("Toyota"))
             System.out.println("O carro escolhido foi um Toyota Corolla 2022 avalido em 220.000");
 
-        float valorEntrada, valorFinal;
-
+        float valorEntrada;
+        float valorFinal;
 
         float valorHonda = 170000F;
         float valorToyota = 220000F;
@@ -66,14 +66,36 @@ public class Carro {
             DecimalFormat formato = new DecimalFormat("#,###");
             System.out.println("O valor final ficara em "+ formato.format(valorFinal));
 
+            float parcelas;
+
+            System.out.println("Em quantas vezes deseja parcelar o valor ?: ");
+            parcelas = scanner.nextFloat();
+
+            float valorParcelas = valorFinal / parcelas;
+
+            DecimalFormat format = new DecimalFormat("#,###");
+            System.out.println("O valor das parcelas vao ficar em "+formato.format(valorParcelas));
+
         } else if (escolha.equals("Toyota")) {
 
             valorFinal = valorToyota - valorEntrada;
 
-            DecimalFormat formato = new DecimalFormat("#,###");
-            System.out.println("O valor final ficara em "+ formato.format(valorFinal));
+            DecimalFormat formato1 = new DecimalFormat("#,###");
+            System.out.println("O valor final ficara em "+ formato1.format(valorFinal));
+
+            float parcelas;
+
+            System.out.println("Em quantas vezes deseja parcelar o valor ?: ");
+            parcelas = scanner.nextFloat();
+
+            float valorParcelas = valorFinal / parcelas;
+
+            DecimalFormat formato2 = new DecimalFormat("#,###");
+            System.out.println("O valor das parcelas vao ficar em "+formato2.format(valorParcelas));
 
         }
+
+
 
 
     }
